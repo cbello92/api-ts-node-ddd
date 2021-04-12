@@ -1,6 +1,7 @@
 import { EventDomainArea } from './../../../domain/events/EventDomainArea';
 import { Area } from '../../../domain/Area';
 import { PostgreSQLAreaRepository } from './../../../infrastructure/persistence/PostgreSQLAreaRepository';
+import * as AreaDTO from '../../serializers/AreaDTO';
 
 export class SaveArea {
     constructor(private areaRepository: PostgreSQLAreaRepository) { }
@@ -13,6 +14,6 @@ export class SaveArea {
             return new EventDomainArea().schemaInvalid(validations.messages || []);
         }
 
-        return await this.areaRepository.saveArea(body);
+        return AreaDTO.single(await this.areaRepository.saveArea(body));
     }
 }

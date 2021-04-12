@@ -1,0 +1,1 @@
+INSERT INTO area (nombre) VALUES($1) RETURNING *

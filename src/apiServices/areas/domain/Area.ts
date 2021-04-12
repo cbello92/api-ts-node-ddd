@@ -1,6 +1,6 @@
-import { ModelSchema } from '../../shared/ModelSchemaBase/ModelSchema';
+import { ModelSchemaBase } from '../../shared/ModelSchemaBase/ModelSchemaBase';
 
-export class Area extends ModelSchema {
+export class Area extends ModelSchemaBase {
     constructor() {
         super({
             "areaName": {

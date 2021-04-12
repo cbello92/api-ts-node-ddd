@@ -1,6 +1,6 @@
-import { EventDomain } from '../../../shared/EventDomainBase/EventDomain';
+import { EventDomainBase } from '../../../shared/EventDomainBase/EventDomainBase';
 
-export class EventDomainArea implements EventDomain {
+export class EventDomainArea implements EventDomainBase {
     notFound(messages: string[]): Object {
         return {
             type: 'NOT_FOUND',

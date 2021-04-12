@@ -3,6 +3,9 @@ import { InMemoryRepository } from './../../../../infrastructure/persitence/InMe
 import { AreaRepository } from './../../domain/AreaRepository';
 
 export class InMemoryAreaRepository extends InMemoryRepository implements AreaRepository {
+    getSQL(action: string, file: string): string {
+        throw new Error('Method not implemented.');
+    }
     
     async getAllAreas(): Promise<any[]> {
         return await this.findAll();

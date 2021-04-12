@@ -1,5 +1,5 @@
 
- export class ModelSchema {
+ export class ModelSchemaBase {
 
     private schemaModel: any;
 
@@ -11,22 +11,6 @@
         let keysBodyEntry: Array<string> = Object.keys(body);
         let keysSchema: Array<string> = Object.keys(this.schemaModel);
         let errors: Array<string> = [];
-
-        
-        if (keysBodyEntry.length === 0) {
-            return {
-                ok: false,
-                messages: [`${keysSchema.map((e: string) => this.schemaModel[e].alias)} ${keysSchema.length > 1 ? 'son requeridos' : 'es requerido'}`]
-            }
-        }
-
-        if(keysBodyEntry.length !== keysSchema.length) {
-            return {
-                ok: false,
-                messages: [`${keysSchema.join(",")} ${keysSchema.length > 1 ? 'son las propiedades aceptadas' : 'es la propiedad aceptada'}`]
-            }
-        }
-
 
         let orderBody = {};
 
